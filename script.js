@@ -2,7 +2,7 @@
 
 
 let selectedBet = ""; // Loại cược đã chọn
-let userBalance = 10000; // Số dư mặc định khi đăng nhập
+let userBalance = 56789; // Số dư mặc định khi đăng nhập
 const maxAccounts = 100000000; // Giới hạn số tài khoản tối đa
 let accountCount = 0; // Biến theo dõi số tài khoản đã tạo
 
