@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum32.club</title>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--pay-->
+    <audio id="dice-sound">
+        <source src="path/to/your/sound.mp3" type="audio/mp3">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+<!-- Label Link để nhận tiền và dẫn tới URL -->
+<a href="https://t.me/suporthuanha" id="label-link" class="label-link" onclick="handleLinkClick()">Admin Website </a>
+    <!-- Thêm thẻ audio để phát nhạc -->
+    <audio id="background-music" loop>
+        <source src="https://files.catbox.moe/qkk9w4.mp3" type="audio/mp3">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
 
+    <!-- Form đăng nhập -->
+    <div class="form-container" id="form-container">
+        <h1>Sum32.club</h1>
+        <p>Vui lòng nhập tên của bạn:</p>
+        <input type="text" id="username" placeholder="Nhập tên của bạn">
+
+        <button id="login-btn">Login</button>
+    </div>
+    <!-- Khu vực trò chơi -->
+    <div id="game-area" class="hidden">
+
+<!-- Hiển thị thông tin người dùng -->
+        <div id="user-info">
+            <span id="display-username"></span>
+            <span id="display-balance">Số dư: 10.000₫</span>
+        </div>
+
+
+        <div class="menu">
+            <h3>
+•
+•
+</h3>
+</div>
+    <div class="info">
+        <p id="user-ip">Đang lấy địa chỉ IP...</p>
+    </div>
+<!-- Thanh ngăn cách -->
+<div class="separator"></div>
+        
+            <div class="button-container">
+                <button id="bet-tai">Tài</button>
+                <button id="bet-xiu">Xỉu</button>
+                <button id="bet-chan">Chẵn</button>
+                <button id="bet-le">Lẻ</button>
+            </div>
+            <div id="bet-form" class="hidden">
+                <p>Nhập số tiền cược:</p>
+                <input type="number" id="bet-amount" placeholder="Nhập số tiền" min="1">
+                <button id="confirm-bet">Đặt cược</button>
+                <p id="error-message" class="hidden">Số dư không đủ!</p>
+
+<!-- Nút Rút Tiền -->
+<button id="withdraw-btn">Rút Tiền</button>
+
+<!-- Form rút tiền (ẩn ban đầu) -->
+<div id="withdraw-form" class="modal">
+  <div class="modal-content">
+    <span id="close-form" class="close">&times;</span>
+    <h2>Rút Tiền</h2>
+    <label for="account-name">Tên Tài Khoản:</label>
+    <input type="text" id="account-name" placeholder="Nhập tên tài khoản" required><br><br>
+
+    <label for="account-number">Số Tài Khoản:</label>
+    <input type="text" id="account-number" placeholder="Nhập số tài khoản" required><br><br>
+
+    <label for="bank-select">Chọn Ngân Hàng:</label>
+    <select id="bank-select">
+      <option value="vietcombank">Vietcombank</option>
+      <option value="techcombank">Techcombank</option>
+      <option value="sacombank">Mbbank</option>
+      <option value="vietinbank">Vietinbank</option>
+    </select><br><br>
+
+    <!-- Nhập số tiền rút -->
+    <label for="withdraw-amount">Số Tiền:</label>
+    <input type="number" id="withdraw-amount" placeholder="Nhập số tiền cần rút" required><br><br>
+
+    <button id="submit-withdraw">Rút Tiền</button>
+  </div>
+            </div>
+
+        </div>
+
+        <p id="status">Hãy chọn một loại cược để bắt đầu!</p>
+        <div id="dice-container">
+            🎲
+        </div>
+        <div id="loading-message" class="hidden"> Đang Tính Toán...</div>
+    </div>
+<!-- Hiển thị thông tin rút tiền và trạng thái -->
+<div id="withdraw-info">
+  <p id="account-info" class="hidden">Tên Tài Khoản: <span id="display-account-name"></span></p>
+  <p id="account-number-info" class="hidden">Số Tài Khoản: <span id="display-account-number"></span></p>
+  <p id="withdraw-status" class="hidden" style="color: gold;">Đang xử lý...</p>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
