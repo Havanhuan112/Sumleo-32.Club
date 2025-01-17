@@ -7,16 +7,34 @@
      <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Nền mờ khóa web -->
-<div id="overlay"></div>
+     <button id="btnNapTien">Nạp tiền</button>
 
-<!-- Form thông báo bảo trì -->
-<div id="web-lock">
-    <div id="maintenance-message">
-        <h1>Trang Web Đang Bảo Trì</h1>
-            <div class="running-text">Sum32.club Game Đổi Thưởng uy tín</div>
+    <div id="modalNapTien" style="display:none;">
+      <h3>Nạp tiền</h3>
+      <label>Nhập số tiền cần nạp:</label>
+      <input type="number" id="inputSoTien" placeholder="Nhập số tiền">
+      <button id="btnHienThiThongTin">Nạp Tiền</button>
+
+      <div id="thongTinChuyenTien" style="display:none;">
+        <h4>Thông tin chuyển khoản:</h4>
+        <p>
+          <strong>Số tài khoản:</strong> 
+          <span id="soTaiKhoan">0325575642</span>
+          <button id="btnCopyTaiKhoan">Sao chép</button>
+        </p>
+        <p>
+          <strong>Ngân hàng:</strong> Ngân hàng Mbbank
+        </p>
+        <p>
+          <strong>Nội dung chuyển tiền:</strong> 
+          <span id="noiDungChuyenTien"></span>
+          <button id="btnCopyNoiDung">Sao chép</button>
+        </p>
+          <!-- Nút đóng thông tin -->
+            <button id="btnDongModal">Đóng</button>
+          </div>
+      </div>
     </div>
-</div>
     <!--pay-->
     <audio id="dice-sound">
         <source src="path/to/your/sound.mp3" type="audio/mp3">
