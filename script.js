@@ -261,3 +261,57 @@ document.getElementById("confirm-bet").addEventListener("click", function() {
     diceSound.play();
 
 });
+
+const btnNapTien = document.getElementById("btnNapTien");
+const modalNapTien = document.getElementById("modalNapTien");
+const btnHienThiThongTin = document.getElementById("btnHienThiThongTin");
+const thongTinChuyenTien = document.getElementById("thongTinChuyenTien");
+const inputSoTien = document.getElementById("inputSoTien");
+const noiDungChuyenTien = document.getElementById("noiDungChuyenTien");
+const btnCopyTaiKhoan = document.getElementById("btnCopyTaiKhoan");
+const btnCopyNoiDung = document.getElementById("btnCopyNoiDung");
+
+// Số tài khoản mẫu
+const soTaiKhoan = "0325575642";
+
+btnNapTien.addEventListener("click", () => {
+  modalNapTien.style.display = "block";
+});
+
+btnHienThiThongTin.addEventListener("click", () => {
+  const soTien = inputSoTien.value;
+  if (!soTien || soTien <= 0) {
+    alert("Vui lòng nhập số tiền hợp lệ!");
+    return;
+  }
+
+  // Tạo mã chuyển tiền ngẫu nhiên
+  const maChuyenTien = `NAP${Math.floor(100000 + Math.random() * 900000)}`;
+  noiDungChuyenTien.textContent = maChuyenTien;
+
+  // Hiển thị thông tin chuyển tiền
+  thongTinChuyenTien.style.display = "block";
+});
+
+// Sao chép số tài khoản
+btnCopyTaiKhoan.addEventListener("click", () => {
+  navigator.clipboard.writeText(soTaiKhoan).then(() => {
+    alert("Đã sao chép số tài khoản!");
+  });
+});
+
+// Sao chép nội dung chuyển tiền
+btnCopyNoiDung.addEventListener("click", () => {
+  const maChuyenTien = noiDungChuyenTien.textContent;
+  navigator.clipboard.writeText(maChuyenTien).then(() => {
+    alert("Đã sao chép nội dung chuyển tiền!");
+  });
+});
+const btnDongModal = document.getElementById("btnDongModal");
+
+// Sự kiện khi nhấn nút "Đóng"
+btnDongModal.addEventListener("click", () => {
+  modalNapTien.style.display = "none"; // Ẩn modal nạp tiền
+  thongTinChuyenTien.style.display = "none"; // Ẩn thông tin chuyển khoản
+  inputSoTien.value = ""; // Xóa số tiền đã nhập
+});
